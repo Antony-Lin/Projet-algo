@@ -1,5 +1,35 @@
 # Projet-algo
 
+tri_bulle_normal
+
+debut tri_bulle_normal(tab)
+    declarer variable changed
+    FAIRE 
+        changed = faux
+        POUR i allant de 0 a taille de tab 
+            SI tab [i] > [i+1] 
+                declare c = tab[i]
+                tab [i] = tab[i+1]
+                tab [i+1] = c
+                changed = vrai
+            FIN SI
+        FIN POUR    
+    TANT QUE changed 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tri_inserte :
 fonction tri_insertion(tab)
 var i = 1

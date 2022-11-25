@@ -56,3 +56,23 @@ function tri_selection(tab){
     }
     return tab
 };
+
+function sort(tab){
+    let changed;
+    do{
+        changed = false;
+        for(let i=0; i < tab.length-1; i++) {
+            if(tab[i] > tab[i+1]) {
+                let c = tab[i];
+                tab[i] = tab[i+1];
+                tab[i+1] = c;
+                changed = true;
+            }
+        }
+    } while(changed);
+    return tab
+}
+
+tableau = tab(5)
+tab_tri_bulle = sort(tableau);
+console.log(tab_tri_bulle);
