@@ -1,15 +1,15 @@
 function getRandom(){
-    return Math.floor(Math.random() * 100 + 1);
-}
+    return Math.floor(Math.random() * 999 + 1);
+};
 
 function tab(size){
     let tableau = [];
     for(let i = 0; i < size; i++){
-        tableau.push(getRandom(5));
+        tableau.push(getRandom());
     }
     tableau.length = size;
     return tableau
-}
+};
 
 function tri_insertion(tab){
     for(let i = 1; i < tab.length; i++){
@@ -23,7 +23,7 @@ function tri_insertion(tab){
         tab[j] = x;
     }
     return tab
-}
+};
 
 function tri_bulle_opti(tab){
     for(let i = 0; i < tab.length; i++){
@@ -40,8 +40,19 @@ function tri_bulle_opti(tab){
             return tab
         }
     }
-}
+};
 
-console.log(tri_bulle_opti(tab(30)))
-
-
+function tri_selection(tab){
+    for(let i = 0; i < tab.length; i++){
+        let min = i;
+        for (let j = i + 1; j < tab.length; j++){
+            if(tab[j] < tab[min]){
+                min = j;
+            }
+        }
+        let c = tab[i];
+        tab[i] = tab[min];
+        tab[min] = c;
+    }
+    return tab
+};

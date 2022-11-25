@@ -12,7 +12,26 @@ var i = 1
             tab[j] = x
             fin tant que   
         fin tant que
-        retourne tab 
+    retourne tab 
+fin fonction
+
+
+tri_selection :
+fonction tri_selection(tab)
+    var i = 0
+        tant que i < taille(tab) alors i + 1
+            var min = i
+            var j = i + 1
+            tant que j < taille(tab) alors j + 1
+                si tab[j] < tab[min]
+                    min = j
+                fin si
+            fin tant que
+        var c = tab[i]
+        tab[i] = tab[min]
+        tab[min] = c
+        fin tant que
+    retourne tab
 fin fonction
 
 
