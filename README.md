@@ -1,12 +1,12 @@
 # Projet-algo
 
-tri_bulle_normal
-
-debut tri_bulle_normal(tab)
+Tri_bulle_normal
+DEBUT tri_bulle_normal(tab)
     declarer variable changed
     FAIRE 
         changed = faux
-        POUR i allant de 0 a taille de tab 
+        var i = 0
+        TANT QUE i < taille(tab) ALORS i + 1 
             SI tab [i] > [i+1] 
                 declare c = tab[i]
                 tab [i] = tab[i+1]
@@ -15,72 +15,60 @@ debut tri_bulle_normal(tab)
             FIN SI
         FIN POUR    
     TANT QUE changed 
+FIN
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-tri_inserte :
-fonction tri_insertion(tab)
+Tri_inserte :
+DEBUT tri_insertion(tab)
 var i = 1
-       tant que i < taille(tab) alors i + 1
-            x = tab[i]
-            j = i
-            tant que j > 0 et tab[j - 1] > x
-                     tab[j] = tab[j - 1]
-                     j = j - 1         
+    TANT QUE i < taille(tab) ALORS i + 1
+        x = tab[i]
+        j = i
+        TANT QUE j > 0 et tab[j - 1] > x
+            tab[j] = tab[j - 1]
+            j = j - 1         
             tab[j] = x
-            fin tant que   
-        fin tant que
+        FIN TANT QUE   
+    FIN TANT QUE
     retourne tab 
-fin fonction
+FIN
 
 
-tri_selection :
-fonction tri_selection(tab)
+Tri_selection :
+DEBUT tri_selection(tab)
     var i = 0
-        tant que i < taille(tab) alors i + 1
+        TANT QUE i < taille(tab) ALORS i + 1
             var min = i
             var j = i + 1
-            tant que j < taille(tab) alors j + 1
-                si tab[j] < tab[min]
+            TANT QUE j < taille(tab) alors j + 1
+                SI tab[j] < tab[min]
                     min = j
-                fin si
-            fin tant que
-        var c = tab[i]
-        tab[i] = tab[min]
-        tab[min] = c
-        fin tant que
+                FIN SI
+            FIN TANT QUE
+            var c = tab[i]
+            tab[i] = tab[min]
+            tab[min] = c
+        FIN TANT QUE
     retourne tab
-fin fonction
+FIN
 
 
-Algo tri_a_bulle_opti :
-fonction tri_a_bulle_opti(tab)
+Tri_a_bulle_opti :
+DEBUT tri_a_bulle_opti(tab)
 var i = 0
-    tant que i < taille(tab) alors i + 1
+    TANT QUE i < taille(tab) alors i + 1
         var tabool = vrai
         var j = 0
-        tant que j < taille(tab) - i - 1 alors j + 1
-            si tab[j + 1] < tab[j]
+        TANT QUE j < taille(tab) - i - 1 alors j + 1
+            SI tab[j + 1] < tab[j]
                 var c = tab[j]
                 tab[j] = tab[j + 1]
                 tab[j + 1] = c
                 tabool = faux
-            fin si
-        fin tant que
-    si tabool == vrai
-        retourne tab
-    fin si
-    fin tant que
-fin fonction
+            FIN SI
+        FIN TANT QUE
+        SI tabool == vrai
+            retourne tab
+        FIN SI
+    FIN TANT QUE
+FIN
