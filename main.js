@@ -32,7 +32,7 @@ function tri_insertion(tab){
 
 
 function tri_bulle_opti(tab){
-    let compteur_bulle_opti = 0;
+    compteur_bulle_opti = 0;
     for(let i = 0; i < tab.length; i++){
         let tablebool = true;
         for(let j = 0; j < tab.length - i - 1; j++){
@@ -46,8 +46,7 @@ function tri_bulle_opti(tab){
             }
         }
         if(tablebool == true){
-            console.log(compteur_bulle_opti)
-            return tab
+            return compteur_bulle_opti
         }
     }
 };
@@ -74,7 +73,7 @@ function tri_selection(tab){
 
 
 function tri_bulle_normal(tab){
-    let compteur_bulle_normal = 0;
+    compteur_bulle_normal = 0;
     let changed;
     do{
         changed = false;
@@ -95,15 +94,27 @@ function tri_bulle_normal(tab){
 
 function stat(min, max, step, nbr){
     let a = min;
-    let c = []
-    while(a <= max){  
+    let list = []
+    while(a <= max){
+        let inter = [];
         for(let i = 0; i < nbr; i++){
-            c.push(tab(a))
-            console.log(tri_bulle_opti(tab(a)))            
-        }a += step
-        
+            inter.push(tab(a))
+        }
+        a += step
+        list.push(inter) 
+    }
+    console.log(list);
+    for(let listinter in list){
+        let result = 0;
+        let len = 0;
+        for(let table in list[listinter]){
+            let list1 = list[listinter][table]
+            result += tri_bulle_opti(list1)
+            len = list1.length
+        }
+        let moyen = len + " " + (result / nbr);
+        console.log(moyen);
     }
 }
 
-stat(10, 50, 5, 3)
-
+stat(10, 20, 5, 3)
